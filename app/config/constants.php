@@ -1,6 +1,6 @@
 <?php
 // project name
-define('PROJECT_NAME', 'Raamistik');
+define('PROJECT_NAME', 'kpr');
 // app root dir
 define('APPROOT', dirname(dirname(__FILE__)));
 // URL root
@@ -10,4 +10,4 @@ define('URLROOT', 'http://' . $_SERVER['HTTP_HOST'] . '/' . PROJECT_NAME);
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', '');
-define('DB_NAME', 'raamistik');
+define('DB_NAME', 'kpr');
