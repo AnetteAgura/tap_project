@@ -1,4 +1,8 @@
 <?php require_once APPROOT . '/views/inc/header.php'; ?>
+<?php
+echo '<pre>';
+print_r($data);
+?>
 <h1><?php echo $data['title']; ?></h1>
 <!-- table -->
 <table class="table table-striped">
@@ -43,7 +47,7 @@
         <td>1234567</td>
         <td>Aknad</td>
         <td>Plastaknad</td>
-        <td>Tartumaal</td>
+        <td>Tartumaa</td>
     </tr>
     <tr>
         <th scope="row">4</th>
