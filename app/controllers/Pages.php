@@ -16,7 +16,7 @@ class Pages extends Controller
     {
         //echo 'index method is loaded<br>';
         $data = array(
-            'title' => 'Welcome to Pages',
+            'title' => 'Welcome to KPR project',
             'content' => 'Pages index view is loaded'
         );
         $this->view('pages/index', $data);
