@@ -1,11 +1,11 @@
 <?php
 
 
-class Page
+class Partner
 {
 
     /**
-     * Page constructor.
+     * Partner constructor.
      */
     public function __construct()
     {
