@@ -17,7 +17,7 @@
     <?php foreach ($data['partners'] as $partner): ?>
         <tr>
             <th scope="row"><?php echo $partner->id; ?></th>
-            <td><?php echo $partner->name; ?></td>
+            <td><?php echo $partner->partner_name; ?></td>
             <td><?php echo $partner->reg_nr; ?></td>
             <td><?php echo $partner->email; ?></td>
             <td><?php echo $partner->phone; ?></td>

@@ -14,7 +14,7 @@ class Partner
 
     public function getPartners()
     {
-        $this->db->query('SELECT *, activity.name as partner_activity FROM partners INNER JOIN activity ON partners.activity=activity.id ');
+        $this->db->query('SELECT *, partners.name as partner_name ,activity.name as partner_activity FROM partners INNER JOIN activity ON partners.activity=activity.id ');
         $result = $this->db->getAll();
         return $result;
     }
