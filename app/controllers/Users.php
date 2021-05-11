@@ -9,7 +9,7 @@ class Users extends Controller
      */
     public function __construct()
     {
-        $usersModel = $this->model('User');
+        $this->usersModel = $this->model('User');
     }
 
     public function register()
@@ -34,6 +34,8 @@ class Users extends Controller
                 $data['email_err'] = 'Please enter email';
             } else if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
                 $data['email_err'] = 'Please enter valid email';
+            } else if ($this->usersModel->findUserByEmail($data['email'])) {
+                $data['email_err'] = 'Email is already in use';
             }
             if (empty($data['password'])) {
                 $data['password_err'] = 'Please enter password';
