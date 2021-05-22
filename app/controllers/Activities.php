@@ -22,4 +22,14 @@ class Activities extends Controller
         $this->view('activities/index', $data);
     }
 
+    public function show($id)
+    {
+        $partners = $this->activityModel->getPartners($id);
+        $activity = $this->activityModel->getActivity($id);
+        $data = array(
+            'activity' => $activity,
+            'partners' => $partners
+        );
+        $this->view('activities/show', $data);
+    }
 }
