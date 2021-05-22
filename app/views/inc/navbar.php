@@ -6,7 +6,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a href="<?php echo URLROOT; ?>" class="nav-link">Home</a>
+                    <a href="<?php echo URLROOT; ?>/partner/index" class="nav-link">Koostööpartnerid</a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?php echo URLROOT; ?>/activities/index" class="nav-link">Teenused</a>
                 </li>
                 <li class="nav-item">
                     <a href="<?php echo URLROOT; ?>/users/login" class="nav-link">Login</a>

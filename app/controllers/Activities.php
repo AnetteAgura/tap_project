@@ -32,4 +32,28 @@ class Activities extends Controller
         );
         $this->view('activities/show', $data);
     }
+
+    public function add()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+            $data = array(
+                'name' => trim($_POST['name']),
+                'name_err' => ''
+            );
+            if (empty($data['name'])) {
+                $data['name_err'] = 'Palun lisa teenuse nimetus';
+            }
+            if (empty($data['name_err'])) {
+                if ($this->activityModel->addActivity($data)) {
+                    header('Location: ' . URLROOT . '/activities/index');
+                }
+            } else {
+                $this->view('activities/add', $data);
+            }
+        } else {
+            $data = array();
+            $this->view('activities/add', $data);
+        }
+    }
 }

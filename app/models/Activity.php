@@ -43,4 +43,16 @@ class Activity
         $result = $this->db->getOne();
         return $result;
     }
+
+    public function addActivity($data)
+    {
+        $this->db->query('INSERT INTO activity SET name=:name');
+        $this->db->bind('name', $data['name']);
+        $result = $this->db->execute();
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
