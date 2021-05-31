@@ -1,7 +1,8 @@
 <?php require_once APPROOT . '/views/inc/header.php'; ?>
 <h1><?php echo $data['title']; ?></h1>
-<div></div>
-<a href="<?php echo URLROOT ?>/activities/add" class="btn btn-primary">Lisa teenus</a>
+<div class="row mb-3">
+    <div class="col-md-6"><a href="<?php echo URLROOT ?>/activities/add" class="btn btn-primary">Lisa teenus</a></div>
+</div>
 <!-- table -->
 <table class="table table-striped">
     <thead>

@@ -56,4 +56,20 @@ class Partner
         $result = $this->db->getAll();
         return $result;
     }
+
+    public function addPartners($data)
+    {
+        $this->db->query('INSERT INTO partners SET name=:name, reg_nr=:reg_nr, email=:email, phone=:phone, activity=:activity, location=:location');
+        $this->db->bind(':name', $data['name']);
+        $this->db->bind(':reg_nr', $data['reg_nr']);
+        $this->db->bind(':email', $data['email']);
+        $this->db->bind(':phone', $data['phone']);
+        $this->db->bind(':activity', $data['activity']);
+        $this->db->bind(':location', $data['location']);
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
