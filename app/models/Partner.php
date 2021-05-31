@@ -64,8 +64,8 @@ class Partner
         $this->db->bind(':reg_nr', $data['reg_nr']);
         $this->db->bind(':email', $data['email']);
         $this->db->bind(':phone', $data['phone']);
-        $this->db->bind(':activity', $data['activity']);
-        $this->db->bind(':location', $data['location']);
+        $this->db->bind(':activity', $data['act']);
+        $this->db->bind(':location', $data['loc']);
         if ($this->db->execute()) {
             return true;
         } else {
