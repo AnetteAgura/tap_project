@@ -52,6 +52,7 @@ class Users extends Controller
             if (empty($data['name_err']) and empty($data['email_err']) and empty($data['password_err']) and empty($data['confirm_password_err'])) {
                 $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
                 if ($this->usersModel->register($data)) {
+                    message('register_success', 'You are registered and now can log in', 'alert alert-danger');
                     header('Location: ' . URLROOT . '/' . 'users/login');
                 } else {
                     die('Something went wrong!');
@@ -77,5 +78,6 @@ class Users extends Controller
     public function login()
     {
         $this->view('users/login');
+        message('register_success');
     }
 }
