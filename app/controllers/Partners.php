@@ -70,47 +70,12 @@ class Partners extends Controller
             if (empty($data['loc'])) {
                 $data['loc_err'] = 'Palun lisa asukoht';
             }
-            if (empty($data['name_err'])) {
+            if (empty($data['name_err']) and empty($data['reg_nr_err']) and empty($data['email_err']) and empty($data['phone_err']) and empty($data['act_err']) and empty($data['loc_err'])) {
                 if ($this->partnerModel->addPartners($data)) {
                     header('Location: ' . URLROOT . '/partners/index');
+                } else {
+                    $this->view('partners/add', $data);
                 }
-            } else {
-                $this->view('partners/add', $data);
-            }
-            if (empty($data['reg_nr_err'])) {
-                if ($this->partnerModel->addPartners($data)) {
-                    header('Location: ' . URLROOT . '/partners/index');
-                }
-            } else {
-                $this->view('partners/add', $data);
-            }
-            if (empty($data['email_err'])) {
-                if ($this->partnerModel->addPartners($data)) {
-                    header('Location: ' . URLROOT . '/partners/index');
-                }
-            } else {
-                $this->view('partners/add', $data);
-            }
-            if (empty($data['phone_err'])) {
-                if ($this->partnerModel->addPartners($data)) {
-                    header('Location: ' . URLROOT . '/partners/index');
-                }
-            } else {
-                $this->view('partners/add', $data);
-            }
-            if (empty($data['act_err'])) {
-                if ($this->partnerModel->addPartners($data)) {
-                    header('Location: ' . URLROOT . '/partners/index');
-                }
-            } else {
-                $this->view('partners/add', $data);
-            }
-            if (empty($data['loc_err'])) {
-                if ($this->partnerModel->addPartners($data)) {
-                    header('Location: ' . URLROOT . '/partners/index');
-                }
-            } else {
-                $this->view('partners/add', $data);
             }
         } else {
             $data = array();
