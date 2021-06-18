@@ -36,7 +36,7 @@
 <!-- table -->
 <script>
     function sortTable() {
-        var table, rows, switching, i, x, y, shouldSwitch;
+        let table, rows, switching, i, x, y, shouldSwitch;
         table = document.getElementById("myTable");
         switching = true;
         while (switching) {
