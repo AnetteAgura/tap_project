@@ -2,9 +2,10 @@
 <h1><?php echo $data['title']; ?></h1>
 <div class="row mb-3">
     <div class="col-md-6"><a href="<?php echo URLROOT ?>/partners/add" class="btn btn-primary">Lisa partner</a></div>
+    <button class="col-md-2 btn btn-primary" onclick="sortTable()">Järjesta</button>
 </div>
 <!-- table -->
-<table class="table table-striped">
+<table class="table table-striped" id="myTable">
     <thead>
     <tr>
         <th scope="col">nr</th>
@@ -33,4 +34,28 @@
     </tbody>
 </table>
 <!-- table -->
+<script>
+    function sortTable() {
+        var table, rows, switching, i, x, y, shouldSwitch;
+        table = document.getElementById("myTable");
+        switching = true;
+        while (switching) {
+            switching = false;
+            rows = table.rows;
+            for (i = 1; i < (rows.length - 1); i++) {
+                shouldSwitch = false;
+                x = rows[i].getElementsByTagName("TD")[0];
+                y = rows[i + 1].getElementsByTagName("TD")[0];
+                if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                    shouldSwitch = true;
+                    break;
+                }
+            }
+            if (shouldSwitch) {
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+            }
+        }
+    }
+</script>
 <?php require_once APPROOT . '/views/inc/footer.php'; ?>
